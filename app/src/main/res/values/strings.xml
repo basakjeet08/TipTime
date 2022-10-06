@@ -7,5 +7,5 @@
     <string name="Okay">Okay (10%)</string>
     <string name="Roundup">Round up Tip ?</string>
     <string name="Calculate">Calculate</string>
-    <string name="Tip">Tip Amount : 0</string>
+    <string name="Tip">Tip Amount : %s</string>
 </resources>

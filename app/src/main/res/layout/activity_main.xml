@@ -7,6 +7,7 @@
     android:padding="16dp"
     tools:context=".MainActivity">
 
+    <!--The Edit Text Field to take the input from the user -->
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/cost"
         android:layout_width="160dp"
@@ -19,6 +20,7 @@
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="16dp" />
 
+    <!--How was the Service TextView-->
     <TextView
         android:id="@+id/how_was_the_Service"
         android:layout_width="match_parent"
@@ -31,6 +33,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cost" />
 
+    <!--RadioGround which Contains all the radio Button and align them -->
     <RadioGroup
         android:id="@+id/radioGroup"
         android:layout_width="match_parent"
@@ -40,38 +43,52 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/how_was_the_Service">
 
+        <!--Amazing Radio Button-->
         <RadioButton
             android:id="@+id/amazingButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/Amazing" />
 
+        <!--Good Radio Button-->
         <RadioButton
             android:id="@+id/goodButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/Good" />
 
+        <!--Okay Radio Button-->
         <RadioButton
             android:id="@+id/okayButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/Okay" />
     </RadioGroup>
-    <Switch
+
+    <!--Switch To ask user whether to Round the Tip up or not (Default : True)-->
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/roundUpSwitch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/Roundup"
-        android:id="@+id/roundUpSwitch"
-        app:layout_constraintTop_toBottomOf="@id/radioGroup"
         android:checked="true"
-        />
+        android:text="@string/Roundup"
+        app:layout_constraintTop_toBottomOf="@id/radioGroup" />
+
+    <!--Calculate button which when hit calculate the tip that the user needs to pay-->
     <Button
         android:id="@+id/calculateButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/Calculate"
-        app:layout_constraintTop_toBottomOf="@id/roundUpSwitch"
-        />
+        app:layout_constraintTop_toBottomOf="@id/roundUpSwitch" />
+
+    <!--Text View which shows the tip amount to the user-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Tip"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/calculateButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.basakjeet08.tiptime.databinding.ActivityMainBinding
 import java.text.NumberFormat
+import kotlin.math.round
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,17 +18,27 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        //On set listener for the Calculate Button
         binding.calculateButton.setOnClickListener { calculateTip() }
     }
+
+    //Function to Calculate the Tip
     private fun calculateTip(){
-        // Add a case for null value in the text
+        // InCase for null value in the EditText it returns
+        if(binding.cost.text.toString().toDoubleOrNull() == null) {
+            binding.tipAmount.text = ""
+            return
+        }
+
         val inputCost = binding.cost.text.toString().toDouble()
         val percentage = when(binding.radioGroup.checkedRadioButtonId){
             R.id.amazingButton -> 20.0
             R.id.goodButton -> 15.0
             else -> 10.0
         }
-        val tip = (inputCost*percentage )/100.0
+        var tip = (inputCost*percentage )/100.0
+        if(binding.roundUpSwitch.isChecked)
+            tip = round(tip)
         val formattedTip = NumberFormat.getCurrencyInstance().format(tip)
         binding.tipAmount.text = getString(R.string.Tip , formattedTip)
     }

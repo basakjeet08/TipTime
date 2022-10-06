@@ -7,14 +7,27 @@
     android:padding="16dp"
     tools:context=".MainActivity">
 
-    <!--The Edit Text Field to take the input from the user -->
 
+    <ImageView
+        android:id="@+id/icon_cost_of_service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:importantForAccessibility="no"
+        app:srcCompat="@drawable/ic_store"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/textField"
+        app:layout_constraintBottom_toBottomOf="@id/textField"
+        />
+
+
+    <!--The Edit Text Field to take the input from the user -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textField"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toEndOf="@id/icon_cost_of_service"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:hint="@string/Cost_of_service"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         >
 
@@ -27,26 +40,38 @@
 
     </com.google.android.material.textfield.TextInputLayout>
     <!--How was the Service TextView-->
+
+    <ImageView
+        android:id="@+id/icon_how_was_the_service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_service"
+        android:importantForAccessibility="no"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/how_was_the_Service"
+        app:layout_constraintBottom_toBottomOf="@id/how_was_the_Service"
+        />
     <TextView
         android:id="@+id/how_was_the_Service"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/about_service"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/radioGroup"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textField" />
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toEndOf="@id/icon_how_was_the_service"
+        app:layout_constraintTop_toBottomOf="@id/textField"
+        />
 
     <!--RadioGround which Contains all the radio Button and align them -->
     <RadioGroup
         android:id="@+id/radioGroup"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:checkedButton="@id/amazingButton"
         android:orientation="vertical"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/how_was_the_Service"
         app:layout_constraintTop_toBottomOf="@id/how_was_the_Service">
 
         <!--Amazing Radio Button-->
@@ -71,18 +96,37 @@
             android:text="@string/Okay" />
     </RadioGroup>
 
+
+    <ImageView
+        android:id="@+id/icon_round_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_round_up"
+        android:importantForAccessibility="no"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/roundUpSwitch"
+        app:layout_constraintBottom_toBottomOf="@id/roundUpSwitch"
+        />
+
+
+
+
     <!--Switch To ask user whether to Round the Tip up or not (Default : True)-->
     <com.google.android.material.switchmaterial.SwitchMaterial
         android:id="@+id/roundUpSwitch"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:checked="true"
         android:text="@string/Roundup"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toEndOf="@id/icon_round_up"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/radioGroup" />
 
     <!--Calculate button which when hit calculate the tip that the user needs to pay-->
     <Button
         android:id="@+id/calculateButton"
+        android:layout_marginTop="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/Calculate"
@@ -94,6 +138,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="bold"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/calculateButton" />
 

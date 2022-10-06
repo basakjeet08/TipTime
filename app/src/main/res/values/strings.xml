@@ -5,4 +5,6 @@
     <string name="Amazing">Amazing (20%)</string>
     <string name="Good">Good (15%)</string>
     <string name="Okay">Okay (10%)</string>
+    <string name="Roundup">Round up Tip ?</string>
+    <string name="Calculate">Calculate</string>
 </resources>

@@ -17,8 +17,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="16dp"
-        />
+        tools:layout_editor_absoluteY="16dp" />
 
     <TextView
         android:id="@+id/how_was_the_Service"
@@ -28,6 +27,7 @@
         android:text="@string/about_service"
         android:textSize="16sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/radioGroup"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cost" />
 
@@ -58,6 +58,20 @@
             android:layout_height="wrap_content"
             android:text="@string/Okay" />
     </RadioGroup>
-
+    <Switch
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Roundup"
+        android:id="@+id/roundUpSwitch"
+        app:layout_constraintTop_toBottomOf="@id/radioGroup"
+        android:checked="true"
+        />
+    <Button
+        android:id="@+id/calculateButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Calculate"
+        app:layout_constraintTop_toBottomOf="@id/roundUpSwitch"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

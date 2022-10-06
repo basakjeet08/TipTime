@@ -4,46 +4,59 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
     android:padding="16dp"
-    >
+    tools:context=".MainActivity">
 
-    <EditText
+    <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/cost"
         android:layout_width="160dp"
 
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         android:hint="@string/Cost_of_service"
         android:inputType="numberDecimal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp"
         />
 
     <TextView
-        android:id="@+id/how_was_the_cost"
+        android:id="@+id/how_was_the_Service"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cost"
-        android:text="@string/about_service"
-        android:textStyle="bold"
         android:layout_marginTop="16dp"
+        android:text="@string/about_service"
         android:textSize="16sp"
-        />
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cost" />
 
     <RadioGroup
+        android:id="@+id/radioGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/how_was_the_cost"
+        android:checkedButton="@id/amazingButton"
+        android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
-        >
+        app:layout_constraintTop_toBottomOf="@id/how_was_the_Service">
+
         <RadioButton
+            android:id="@+id/amazingButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text=""
-            />
+            android:text="@string/Amazing" />
+
+        <RadioButton
+            android:id="@+id/goodButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Good" />
+
+        <RadioButton
+            android:id="@+id/okayButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Okay" />
     </RadioGroup>
 
 

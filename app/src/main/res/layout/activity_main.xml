@@ -1,141 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="16dp"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
-    <!--Image that is shown before the Cost of Service Bar-->
-    <ImageView
-        android:id="@+id/icon_cost_of_service"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:importantForAccessibility="no"
-        app:layout_constraintBottom_toBottomOf="@id/textField"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/textField"
-        app:srcCompat="@drawable/ic_store" />
-
-
-    <!--The Edit Text Input Layout to contain the Edit Text Field -->
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textField"
-        android:layout_width="160dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:hint="@string/Cost_of_service"
-        app:layout_constraintStart_toEndOf="@id/icon_cost_of_service"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <!--The Edit Text Field for User Input-->
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/cost"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="numberDecimal" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-    <!--How was the Service TextView-->
-
-    <!--Image before the How was the Service Question-->
-    <ImageView
-        android:id="@+id/icon_how_was_the_service"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:importantForAccessibility="no"
-        android:src="@drawable/ic_service"
-        app:layout_constraintBottom_toBottomOf="@id/how_was_the_Service"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/how_was_the_Service" />
-
-    <!--How was the Service TextField-->
-    <TextView
-        android:id="@+id/how_was_the_Service"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/about_service"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@id/icon_how_was_the_service"
-        app:layout_constraintTop_toBottomOf="@id/textField" />
-
-    <!--RadioGround which Contains all the radio Button and align them -->
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:checkedButton="@id/amazingButton"
-        android:orientation="vertical"
-        app:layout_constraintStart_toStartOf="@id/how_was_the_Service"
-        app:layout_constraintTop_toBottomOf="@id/how_was_the_Service">
-
-        <!--Amazing Radio Button-->
-        <RadioButton
-            android:id="@+id/amazingButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/Amazing" />
-
-        <!--Good Radio Button-->
-        <RadioButton
-            android:id="@+id/goodButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/Good" />
-
-        <!--Okay Radio Button-->
-        <RadioButton
-            android:id="@+id/okayButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/Okay" />
-    </RadioGroup>
-
-    <!--Image before the Round Up tip -->
-    <ImageView
-        android:id="@+id/icon_round_up"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:importantForAccessibility="no"
-        android:src="@drawable/ic_round_up"
-        app:layout_constraintBottom_toBottomOf="@id/roundUpSwitch"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/roundUpSwitch" />
-
-
-    <!--Switch To ask user whether to Round the Tip up or not (Default : True)-->
-    <com.google.android.material.switchmaterial.SwitchMaterial
-        android:id="@+id/roundUpSwitch"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:checked="true"
-        android:text="@string/Roundup"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/icon_round_up"
-        app:layout_constraintTop_toBottomOf="@id/radioGroup" />
-
-    <!--Calculate button which when hit calculate the tip that the user needs to pay-->
-    <Button
-        android:id="@+id/calculateButton"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/Calculate"
-        app:layout_constraintTop_toBottomOf="@id/roundUpSwitch" />
+        android:padding="16dp"
+        tools:context=".MainActivity">
+        <!--Image that is shown before the Cost of Service Bar-->
+        <ImageView
+            android:id="@+id/icon_cost_of_service"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:importantForAccessibility="no"
+            app:layout_constraintBottom_toBottomOf="@id/textField"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/textField"
+            app:srcCompat="@drawable/ic_store"
+            app:tint="@color/green" />
 
-    <!--Text View which shows the tip amount to the user-->
-    <TextView
-        android:id="@+id/tipAmount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/calculateButton" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <!--The Edit Text Input Layout to contain the Edit Text Field -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textField"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:hint="@string/Cost_of_service"
+            app:layout_constraintStart_toEndOf="@id/icon_cost_of_service"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <!--The Edit Text Field for User Input-->
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/cost"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <!--How was the Service TextView-->
+
+        <!--Image before the How was the Service Question-->
+        <ImageView
+            android:id="@+id/icon_how_was_the_service"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_service"
+            app:layout_constraintBottom_toBottomOf="@id/how_was_the_Service"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/how_was_the_Service"
+            app:tint="@color/green" />
+
+        <!--How was the Service TextField-->
+        <TextView
+            android:id="@+id/how_was_the_Service"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/about_service"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/icon_how_was_the_service"
+            app:layout_constraintTop_toBottomOf="@id/textField" />
+
+        <!--RadioGround which Contains all the radio Button and align them -->
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkedButton="@id/amazingButton"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="@id/how_was_the_Service"
+            app:layout_constraintTop_toBottomOf="@id/how_was_the_Service">
+
+            <!--Amazing Radio Button-->
+            <RadioButton
+                android:id="@+id/amazingButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Amazing" />
+
+            <!--Good Radio Button-->
+            <RadioButton
+                android:id="@+id/goodButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Good" />
+
+            <!--Okay Radio Button-->
+            <RadioButton
+                android:id="@+id/okayButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Okay" />
+        </RadioGroup>
+
+        <!--Image before the Round Up tip -->
+        <ImageView
+            android:id="@+id/icon_round_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_round_up"
+            app:layout_constraintBottom_toBottomOf="@id/roundUpSwitch"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/roundUpSwitch"
+            app:tint="@color/green" />
+
+
+        <!--Switch To ask user whether to Round the Tip up or not (Default : True)-->
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/roundUpSwitch"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:checked="true"
+            android:text="@string/Roundup"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/icon_round_up"
+            app:layout_constraintTop_toBottomOf="@id/radioGroup" />
+
+        <!--Calculate button which when hit calculate the tip that the user needs to pay-->
+        <Button
+            android:id="@+id/calculateButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/Calculate"
+            app:layout_constraintTop_toBottomOf="@id/roundUpSwitch" />
+
+        <!--Text View which shows the tip amount to the user-->
+        <TextView
+            android:id="@+id/tipAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/calculateButton" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

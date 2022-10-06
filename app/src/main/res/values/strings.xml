@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">TipTime</string>
+    <string name="Cost_of_service">Cost Of Service</string>
+    <string name="about_service">How was the Service ?</string>
+    <string name="Amazing">Amazing (20%)</string>
+    <string name="Good">Good (15%)</string>
+    <string name="Okay">Okay (10%)</string>
 </resources>

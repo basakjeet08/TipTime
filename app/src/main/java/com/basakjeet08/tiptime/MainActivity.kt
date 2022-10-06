@@ -37,6 +37,8 @@ class MainActivity : AppCompatActivity() {
             else -> 10.0
         }
         var tip = (inputCost*percentage )/100.0
+
+        // Checking if the switch is enabled or disabled and calculating the tip accordingly
         if(binding.roundUpSwitch.isChecked)
             tip = round(tip)
         val formattedTip = NumberFormat.getCurrencyInstance().format(tip)
